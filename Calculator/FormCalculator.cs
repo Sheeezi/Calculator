@@ -6,6 +6,9 @@ namespace Calculator
     {
         string numberString1, numberString2, matOperator;
         double numberDouble1, numberDouble2;
+        
+        List<string> ResultsList = new();
+        string results = string.Empty;
 
         public FormCalculator()
         {
@@ -13,12 +16,10 @@ namespace Calculator
             panelCalulator.Location = new Point(this.ClientSize.Width / 2 - panelCalulator.Width / 2, this.ClientSize.Height / 2 - panelCalulator.Height / 2);
         }
 
-        private void FormCalculator_ResizeEnd(object sender, EventArgs e)
+        private void FormCalculator_CenterCalc(object sender, EventArgs e)
         {
             panelCalulator.Location = new Point(this.ClientSize.Width / 2 - panelCalulator.Width / 2, this.ClientSize.Height / 2 - panelCalulator.Height / 2);
         }
-
-
 
         private void SetNumberValue(string vaule)
         {
@@ -36,7 +37,11 @@ namespace Calculator
 
         private void MakeCalculation()
         {
+            if (numberString1 == "" || numberString1 == null)
+                return;
+
             NumbersCoversion();
+
             switch (matOperator)
             {
                 case "+":
@@ -63,8 +68,10 @@ namespace Calculator
                     break;
             }
             numberString2 = "";
+            matOperator = string.Empty;
             labelNumberDisplayer.Text = numberString1;
         }
+
         private void SetOperatorSign(string value)
         {
             if (numberString2 == null || numberString2 == "")
@@ -88,83 +95,25 @@ namespace Calculator
             //MessageBox.Show(numberString2);
             numberDouble2 = Convert.ToDouble(numberString2.ToString());
         }
-        //private void buttonZero_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("0");
-        //}
-        //private void buttonOne_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("1");
-        //}
 
-        //private void buttonTwo_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("2");
-        //}
+        private void SaveResult()
+        {
+            ResultsList.Add(numberString1);
+            DisplayResults();
+        }
 
-        //private void buttonThree_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("3");
-        //}
+        private void DisplayResults()
+        {
 
-        //private void buttonFour_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("4");
-        //}
 
-        //private void buttonFive_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("5");
-        //}
+            foreach (string result in ResultsList)
+            {
+                results += $"{result}, ";
+            }
 
-        //private void buttonSix_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("6");
-        //}
-
-        //private void buttonSeven_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("7");
-        //}
-
-        //private void buttonEight_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("8");
-        //}
-
-        //private void buttonNine_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue("9");
-        //}
-
-        //private void buttonComma_Click(object sender, EventArgs e)
-        //{
-        //    SetNumberValue(",");
-        //}
-        //private void buttonAdd_Click(object sender, EventArgs e)
-        //{
-        //    SetOperatorSign("+");
-        //}
-
-        //private void buttonSubtract_Click(object sender, EventArgs e)
-        //{
-        //    SetOperatorSign("-");
-        //}
-
-        //private void buttonTimes_Click(object sender, EventArgs e)
-        //{
-        //    SetOperatorSign("*");
-        //}
-
-        //private void buttonDivide_Click(object sender, EventArgs e)
-        //{
-        //    SetOperatorSign("/");
-        //}
-
-        //private void buttonPercent_Click(object sender, EventArgs e)
-        //{
-        //    SetOperatorSign("%");
-        //}
+            MessageBox.Show(results);
+            results = string.Empty;
+        }
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
@@ -174,23 +123,12 @@ namespace Calculator
 
         private void buttonSign_Click(object sender, EventArgs e)
         {
+            if (numberString1 == "" || numberString1 == null)
+                return;
+
             Button button = (Button)sender;
             SetOperatorSign(button.Text);
         }
-
-        //private void buttonClearEnter_Click(object sender, EventArgs e)
-        //{
-        //    if (matOperator == null || matOperator == "")
-        //    {
-        //        numberString1 = "";
-        //        labelNumberDisplayer.Text = "0";    
-        //    }
-        //    else
-        //    {
-        //        numberString2 = "";
-        //        labelNumberDisplayer.Text = "0";
-        //    }
-        //}
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -205,6 +143,11 @@ namespace Calculator
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             MakeCalculation();
+        }
+
+        private void buttonSaveResult_Click(object sender, EventArgs e)
+        {
+            SaveResult();
         }
     }
 }
