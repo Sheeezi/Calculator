@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             buttonZero = new Button();
             panelCalulator = new Panel();
             buttonSaveResult = new Button();
@@ -50,17 +49,15 @@
             buttonSeven = new Button();
             buttonFour = new Button();
             buttonOne = new Button();
-            timer1 = new System.Windows.Forms.Timer(components);
             panelCalulator.SuspendLayout();
             SuspendLayout();
             // 
             // buttonZero
             // 
             buttonZero.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonZero.Location = new Point(3, 363);
-            buttonZero.Margin = new Padding(3, 4, 3, 4);
+            buttonZero.Location = new Point(3, 272);
             buttonZero.Name = "buttonZero";
-            buttonZero.Size = new Size(117, 64);
+            buttonZero.Size = new Size(102, 48);
             buttonZero.TabIndex = 0;
             buttonZero.Text = "0";
             buttonZero.UseVisualStyleBackColor = true;
@@ -89,18 +86,18 @@
             panelCalulator.Controls.Add(buttonFour);
             panelCalulator.Controls.Add(buttonOne);
             panelCalulator.Controls.Add(buttonZero);
-            panelCalulator.Location = new Point(313, 91);
-            panelCalulator.Margin = new Padding(3, 4, 3, 4);
+            panelCalulator.Location = new Point(274, 68);
             panelCalulator.Name = "panelCalulator";
-            panelCalulator.Size = new Size(248, 503);
+            panelCalulator.Size = new Size(217, 377);
             panelCalulator.TabIndex = 1;
             // 
             // buttonSaveResult
             // 
             buttonSaveResult.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonSaveResult.Location = new Point(3, 434);
+            buttonSaveResult.Location = new Point(3, 326);
+            buttonSaveResult.Margin = new Padding(3, 2, 3, 2);
             buttonSaveResult.Name = "buttonSaveResult";
-            buttonSaveResult.Size = new Size(241, 64);
+            buttonSaveResult.Size = new Size(211, 48);
             buttonSaveResult.TabIndex = 2;
             buttonSaveResult.Text = "Save result";
             buttonSaveResult.UseVisualStyleBackColor = true;
@@ -109,9 +106,9 @@
             // labelNumberDisplayer
             // 
             labelNumberDisplayer.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            labelNumberDisplayer.Location = new Point(3, 7);
+            labelNumberDisplayer.Location = new Point(3, 5);
             labelNumberDisplayer.Name = "labelNumberDisplayer";
-            labelNumberDisplayer.Size = new Size(240, 64);
+            labelNumberDisplayer.Size = new Size(210, 48);
             labelNumberDisplayer.TabIndex = 2;
             labelNumberDisplayer.Text = "0";
             labelNumberDisplayer.TextAlign = ContentAlignment.MiddleRight;
@@ -119,10 +116,9 @@
             // buttonDivide
             // 
             buttonDivide.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonDivide.Location = new Point(189, 75);
-            buttonDivide.Margin = new Padding(3, 4, 3, 4);
+            buttonDivide.Location = new Point(165, 56);
             buttonDivide.Name = "buttonDivide";
-            buttonDivide.Size = new Size(55, 64);
+            buttonDivide.Size = new Size(48, 48);
             buttonDivide.TabIndex = 19;
             buttonDivide.Text = "/";
             buttonDivide.UseVisualStyleBackColor = true;
@@ -131,10 +127,9 @@
             // buttonPercent
             // 
             buttonPercent.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonPercent.Location = new Point(127, 75);
-            buttonPercent.Margin = new Padding(3, 4, 3, 4);
+            buttonPercent.Location = new Point(111, 56);
             buttonPercent.Name = "buttonPercent";
-            buttonPercent.Size = new Size(55, 64);
+            buttonPercent.Size = new Size(48, 48);
             buttonPercent.TabIndex = 18;
             buttonPercent.Text = "%";
             buttonPercent.UseVisualStyleBackColor = true;
@@ -143,10 +138,9 @@
             // buttonClear
             // 
             buttonClear.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonClear.Location = new Point(3, 75);
-            buttonClear.Margin = new Padding(3, 4, 3, 4);
+            buttonClear.Location = new Point(3, 56);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(117, 64);
+            buttonClear.Size = new Size(102, 48);
             buttonClear.TabIndex = 17;
             buttonClear.Text = "C";
             buttonClear.UseVisualStyleBackColor = true;
@@ -155,10 +149,9 @@
             // buttonEquals
             // 
             buttonEquals.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonEquals.Location = new Point(189, 363);
-            buttonEquals.Margin = new Padding(3, 4, 3, 4);
+            buttonEquals.Location = new Point(165, 272);
             buttonEquals.Name = "buttonEquals";
-            buttonEquals.Size = new Size(55, 64);
+            buttonEquals.Size = new Size(48, 48);
             buttonEquals.TabIndex = 15;
             buttonEquals.Text = "=";
             buttonEquals.UseVisualStyleBackColor = true;
@@ -167,10 +160,9 @@
             // buttonEight
             // 
             buttonEight.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonEight.Location = new Point(65, 147);
-            buttonEight.Margin = new Padding(3, 4, 3, 4);
+            buttonEight.Location = new Point(57, 110);
             buttonEight.Name = "buttonEight";
-            buttonEight.Size = new Size(55, 64);
+            buttonEight.Size = new Size(48, 48);
             buttonEight.TabIndex = 7;
             buttonEight.Text = "8";
             buttonEight.UseVisualStyleBackColor = true;
@@ -179,10 +171,9 @@
             // buttonAdd
             // 
             buttonAdd.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonAdd.Location = new Point(189, 291);
-            buttonAdd.Margin = new Padding(3, 4, 3, 4);
+            buttonAdd.Location = new Point(165, 218);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(55, 64);
+            buttonAdd.Size = new Size(48, 48);
             buttonAdd.TabIndex = 14;
             buttonAdd.Text = "+";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -191,10 +182,9 @@
             // buttonSubtract
             // 
             buttonSubtract.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonSubtract.Location = new Point(189, 219);
-            buttonSubtract.Margin = new Padding(3, 4, 3, 4);
+            buttonSubtract.Location = new Point(165, 164);
             buttonSubtract.Name = "buttonSubtract";
-            buttonSubtract.Size = new Size(55, 64);
+            buttonSubtract.Size = new Size(48, 48);
             buttonSubtract.TabIndex = 13;
             buttonSubtract.Text = "-";
             buttonSubtract.UseVisualStyleBackColor = true;
@@ -203,10 +193,9 @@
             // buttonTimes
             // 
             buttonTimes.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonTimes.Location = new Point(189, 147);
-            buttonTimes.Margin = new Padding(3, 4, 3, 4);
+            buttonTimes.Location = new Point(165, 110);
             buttonTimes.Name = "buttonTimes";
-            buttonTimes.Size = new Size(55, 64);
+            buttonTimes.Size = new Size(48, 48);
             buttonTimes.TabIndex = 12;
             buttonTimes.Text = "*";
             buttonTimes.UseVisualStyleBackColor = true;
@@ -215,10 +204,9 @@
             // buttonComma
             // 
             buttonComma.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonComma.Location = new Point(127, 363);
-            buttonComma.Margin = new Padding(3, 4, 3, 4);
+            buttonComma.Location = new Point(111, 272);
             buttonComma.Name = "buttonComma";
-            buttonComma.Size = new Size(55, 64);
+            buttonComma.Size = new Size(48, 48);
             buttonComma.TabIndex = 11;
             buttonComma.Text = ",";
             buttonComma.UseVisualStyleBackColor = true;
@@ -227,10 +215,9 @@
             // buttonThree
             // 
             buttonThree.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonThree.Location = new Point(127, 291);
-            buttonThree.Margin = new Padding(3, 4, 3, 4);
+            buttonThree.Location = new Point(111, 218);
             buttonThree.Name = "buttonThree";
-            buttonThree.Size = new Size(55, 64);
+            buttonThree.Size = new Size(48, 48);
             buttonThree.TabIndex = 10;
             buttonThree.Text = "3";
             buttonThree.UseVisualStyleBackColor = true;
@@ -239,10 +226,9 @@
             // buttonSix
             // 
             buttonSix.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonSix.Location = new Point(127, 219);
-            buttonSix.Margin = new Padding(3, 4, 3, 4);
+            buttonSix.Location = new Point(111, 164);
             buttonSix.Name = "buttonSix";
-            buttonSix.Size = new Size(55, 64);
+            buttonSix.Size = new Size(48, 48);
             buttonSix.TabIndex = 9;
             buttonSix.Text = "6";
             buttonSix.UseVisualStyleBackColor = true;
@@ -251,10 +237,9 @@
             // buttonNine
             // 
             buttonNine.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonNine.Location = new Point(127, 147);
-            buttonNine.Margin = new Padding(3, 4, 3, 4);
+            buttonNine.Location = new Point(111, 110);
             buttonNine.Name = "buttonNine";
-            buttonNine.Size = new Size(55, 64);
+            buttonNine.Size = new Size(48, 48);
             buttonNine.TabIndex = 8;
             buttonNine.Text = "9";
             buttonNine.UseVisualStyleBackColor = true;
@@ -263,10 +248,9 @@
             // buttonFive
             // 
             buttonFive.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonFive.Location = new Point(65, 219);
-            buttonFive.Margin = new Padding(3, 4, 3, 4);
+            buttonFive.Location = new Point(57, 164);
             buttonFive.Name = "buttonFive";
-            buttonFive.Size = new Size(55, 64);
+            buttonFive.Size = new Size(48, 48);
             buttonFive.TabIndex = 6;
             buttonFive.Text = "5";
             buttonFive.UseVisualStyleBackColor = true;
@@ -275,10 +259,9 @@
             // buttonTwo
             // 
             buttonTwo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonTwo.Location = new Point(65, 291);
-            buttonTwo.Margin = new Padding(3, 4, 3, 4);
+            buttonTwo.Location = new Point(57, 218);
             buttonTwo.Name = "buttonTwo";
-            buttonTwo.Size = new Size(55, 64);
+            buttonTwo.Size = new Size(48, 48);
             buttonTwo.TabIndex = 5;
             buttonTwo.Text = "2";
             buttonTwo.UseVisualStyleBackColor = true;
@@ -287,10 +270,9 @@
             // buttonSeven
             // 
             buttonSeven.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonSeven.Location = new Point(3, 147);
-            buttonSeven.Margin = new Padding(3, 4, 3, 4);
+            buttonSeven.Location = new Point(3, 110);
             buttonSeven.Name = "buttonSeven";
-            buttonSeven.Size = new Size(55, 64);
+            buttonSeven.Size = new Size(48, 48);
             buttonSeven.TabIndex = 3;
             buttonSeven.Text = "7";
             buttonSeven.UseVisualStyleBackColor = true;
@@ -299,10 +281,9 @@
             // buttonFour
             // 
             buttonFour.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonFour.Location = new Point(3, 219);
-            buttonFour.Margin = new Padding(3, 4, 3, 4);
+            buttonFour.Location = new Point(3, 164);
             buttonFour.Name = "buttonFour";
-            buttonFour.Size = new Size(55, 64);
+            buttonFour.Size = new Size(48, 48);
             buttonFour.TabIndex = 2;
             buttonFour.Text = "4";
             buttonFour.UseVisualStyleBackColor = true;
@@ -311,10 +292,9 @@
             // buttonOne
             // 
             buttonOne.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            buttonOne.Location = new Point(3, 291);
-            buttonOne.Margin = new Padding(3, 4, 3, 4);
+            buttonOne.Location = new Point(3, 218);
             buttonOne.Name = "buttonOne";
-            buttonOne.Size = new Size(55, 64);
+            buttonOne.Size = new Size(48, 48);
             buttonOne.TabIndex = 1;
             buttonOne.Text = "1";
             buttonOne.UseVisualStyleBackColor = true;
@@ -322,11 +302,10 @@
             // 
             // FormCalculator
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(panelCalulator);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormCalculator";
             Text = "Calculator";
             Resize += FormCalculator_CenterCalc;
@@ -356,7 +335,6 @@
         private Button buttonFour;
         private Button buttonOne;
         private Label labelNumberDisplayer;
-        private System.Windows.Forms.Timer timer1;
         private Button buttonSaveResult;
     }
 }
