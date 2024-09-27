@@ -274,6 +274,7 @@
             buttonSeven.Name = "buttonSeven";
             buttonSeven.Size = new Size(48, 48);
             buttonSeven.TabIndex = 3;
+            buttonSeven.Tag = "7";
             buttonSeven.Text = "7";
             buttonSeven.UseVisualStyleBackColor = true;
             buttonSeven.Click += buttonNumber_Click;

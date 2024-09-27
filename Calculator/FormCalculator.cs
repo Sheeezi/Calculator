@@ -1,25 +1,26 @@
 using CalculatorLib;
-using System.Data;
 
 namespace Calculator
 {
     public partial class FormCalculator : Form
     {
-        private CalculatorLibrary? calculatorLibrary;
+        private CalculatorService? calculatorLibrary;
 
-        List<string> ResultsList = new();
-        string results = string.Empty;
+        private List<string> ResultsList = new();
+        private string results = string.Empty;
+
+        private FileOperationService fileOperationService;
 
         public FormCalculator()
         {
             InitializeComponent();
             CenterCalc();
-            calculatorLibrary = new CalculatorLibrary();
+            calculatorLibrary = new CalculatorService();
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
+            var button = (Button)sender;
             labelNumberDisplayer.Text = calculatorLibrary?.SetNumberValue(button.Text);
         }
 
@@ -41,7 +42,12 @@ namespace Calculator
 
         private void buttonSaveResult_Click(object sender, EventArgs e)
         {
-            calculatorLibrary?.SaveResult();
+            if (fileOperationService == null)
+                fileOperationService = new FileOperationService();
+
+            var calculateResult = calculatorLibrary?.GetNumberString;
+            fileOperationService.SaveResult(calculateResult!);
+
         }
 
         private void FormCalculator_CenterCalc(object sender, EventArgs e)

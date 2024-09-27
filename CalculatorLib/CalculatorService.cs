@@ -1,25 +1,28 @@
-﻿using System.IO;
-using System;
-
-namespace CalculatorLib
+﻿namespace CalculatorLib
 {
-    public class CalculatorLibrary
+    public class CalculatorService
     {
         private string? numberString1, numberString2, matOperator;
         private double? numberDouble1, numberDouble2;
 
+        public string? GetNumberString { get => numberString1; }
+
         public string SetNumberValue(string vaule)
         {
-            if (matOperator is null or "")
+            var result = string.Empty;
+
+            if (matOperator is null || matOperator != string.Empty)
             {
                 numberString1 += vaule;
-                return numberString1;
+                result = numberString1;
             }
             else
             {
                 numberString2 += vaule;
-                return numberString2;
+                result = numberString2;
             }
+
+            return result;
         }
 
         public string SetOperatorSign(string value)
@@ -29,18 +32,22 @@ namespace CalculatorLib
             if (numberString2 is null or "")
             {
                 matOperator = value;
-                return numberString1!;
+                result = numberString1!;
             }
             else
             {
-                result = MakeCalculation();
                 matOperator = value;
-                return result;
+                result = MakeCalculation();
             }
+
+            return result;
+
         }
 
         public string MakeCalculation()
         {
+            var result = string.Empty;
+
             NumbersCoversion();
 
             switch (matOperator)
@@ -69,8 +76,10 @@ namespace CalculatorLib
                     break;
             }
             numberString2 = string.Empty;
-            //matOperator = string.Empty;
-            return numberString1!;
+
+            result = numberString1!;
+
+            return result;
         }
 
         public string ClearCalculation()
@@ -80,17 +89,21 @@ namespace CalculatorLib
             numberString1 = string.Empty;
             numberString2 = string.Empty;
             matOperator = string.Empty;
+
             return "0";
         }
 
         public void NumbersCoversion()
         {
+            //TODO: poprawic
             if (numberString1 is not null or "")
                 numberDouble1 = Convert.ToDouble(numberString1);
 
+            //TODO: poprawic
             if (numberString2 is null or "")
                 return;
-            
+
+            //TODO: poprawic
             if (numberString2 is not null or "")
                 numberDouble2 = Convert.ToDouble(numberString2);
 
@@ -106,15 +119,6 @@ namespace CalculatorLib
             //}      
         }
 
-        public void SaveResult()
-        {
-            var line = string.Empty;
-            var fileName = string.Empty;
 
-            line = $"{numberString1}\n";
-            fileName = "SavedResults.txt";
-
-            File.AppendAllText(fileName, line);
-        }
     }
 }
