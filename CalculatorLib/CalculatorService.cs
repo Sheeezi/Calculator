@@ -11,7 +11,7 @@
         {
             var result = string.Empty;
 
-            if (matOperator is null || matOperator != string.Empty)
+            if (matOperator is null || matOperator == string.Empty)
             {
                 numberString1 += vaule;
                 result = numberString1;
@@ -29,15 +29,15 @@
         {
             var result = string.Empty;
 
-            if (numberString2 is null or "")
+            if (numberString2 is null || numberString2 == string.Empty)
             {
                 matOperator = value;
                 result = numberString1!;
             }
             else
             {
-                matOperator = value;
                 result = MakeCalculation();
+                matOperator = value;
             }
 
             return result;
@@ -95,30 +95,17 @@
 
         public void NumbersCoversion()
         {
-            //TODO: poprawic
-            if (numberString1 is not null or "")
-                numberDouble1 = Convert.ToDouble(numberString1);
-
-            //TODO: poprawic
-            if (numberString2 is null or "")
+            if (numberString1 is null || numberString1 == string.Empty)
                 return;
 
-            //TODO: poprawic
-            if (numberString2 is not null or "")
-                numberDouble2 = Convert.ToDouble(numberString2);
+            if (numberString1 is not null || numberString1 != string.Empty)
+                numberDouble1 = Convert.ToDouble(numberString1);
 
-            //if (numberString1 is null or "")
-            //{
-            //    numberString2 = numberDouble2.ToString();
-            //    return;
-            //}
+            if (numberString2 is null || matOperator == string.Empty)
+                return;
 
-            //if (numberString2 is not null or "")
-            //{
-            //    numberDouble2 = Convert.ToDouble(numberString2);
-            //}      
+            if (matOperator is not null || matOperator != string.Empty)
+                numberDouble2 = Convert.ToDouble(numberString2);   
         }
-
-
     }
 }
